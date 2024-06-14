@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h2>Azure Pipelines update, push 2-28-2024.</h2>
+</div>
+
+
+<h1>Exception Tester</h1>
+<h2>Exceptions</h2>
+<p role="status">An exception will throw when counter reaches 3.</p>
+<p role="status">Exception message: @Model.exceptionMessage</p>
+<form method="post" asp-page-handler="ButtonClick">
+    <button class="btn btn-primary" type="submit">Counter</button>
+</form>
+
+<form method="post" asp-page-handler="ButtonClick">
+    <button class="btn btn-primary" type="submit">Throw Exception</button>
+</form>
+<button class="btn btn-primary" asp-page-handler="JSRuntimeException">JS Error()</button>
+
+@if (!string.IsNullOrEmpty(Model.exceptionMessage))
+{
+    <p>@Model.exceptionMessage</p>
+}
