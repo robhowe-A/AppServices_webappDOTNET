@@ -39,6 +39,14 @@ namespace WebAppDOTNET.Pages
             ThrowException();
         }
 
+        public void OnPostNewThreadThrowException()
+        {
+            // Your code here
+            Thread newThread = new Thread(ThrowException);
+            newThread.Name = "Crash Thread";
+            newThread.Start();
+        }
+
         public void WebException()
         {
             _logger.LogCritical("Test critical log (LogCritical) within exception function WebException.");
