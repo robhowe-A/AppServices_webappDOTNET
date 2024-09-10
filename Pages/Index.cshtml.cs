@@ -49,12 +49,12 @@ namespace WebAppDOTNET.Pages
 
         public void WebException()
         {
-            _logger.LogCritical("Test critical log (LogCritical) within exception function WebException.");
-            _logger.LogDebug("Test debug log (LogDebug) within exception function WebException.");
-            _logger.LogError("Test error log (LogError) within exception function WebException.");
-            _logger.LogInformation("Test information log (LogInformation) within exception function WebException.");
-            _logger.LogTrace("Test trace log (LogTrace) within exception function WebException.");
-            _logger.LogWarning("Test warning log (LogWarning) within exception function WebException.");
+            _logger.LogCritical("Test critical log (LogCritical) within exception function WebException().");
+            _logger.LogDebug("Test debug log (LogDebug) within exception function WebException().");
+            _logger.LogError("Test error log (LogError) within exception function WebException().");
+            _logger.LogInformation("Test information log (LogInformation) within exception function WebException().");
+            _logger.LogTrace("Test trace log (LogTrace) within exception function WebExceptio()n.");
+            _logger.LogWarning("Test warning log (LogWarning) within exception function WebException().");
             throw new System.Net.WebException("This message is to show a send failure.", new ArgumentException("pretend inner error on send"), System.Net.WebExceptionStatus.SendFailure, null);
         }
     }
